@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
  
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('Todo_List')));
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem("Todo_List")) || []);
   
     const [newItem, setNewItem] = useState('');
 
