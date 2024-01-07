@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { useState } from "react";
 import SearchItem from "./SearchItem";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
  
@@ -47,8 +48,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header title = "To do App" />
-      {/* props (title passing as a props) */}
+      <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<>
+      <Header title = "To do App" 
+      />
       <AddItems 
       newItem={newItem}
       setNewItem={setNewItem}
@@ -65,7 +69,11 @@ function App() {
       />
       <Footer 
       length={items.length}
-      />
+      /> 
+      </>}
+      />      
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
